@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.1.4322</version>
+    <authors>Microsoft</authors>
+    <owners>derwasp</owners>
+    <iconUrl>https://github.com/derwasp/choco/raw/master/DotNetSdk1.1/dotnet.png</iconUrl>
+    <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=16217</projectUrl>
+    <id>DotNetSdk1.1</id>
+    <title>.NET Framework SDK Version 1.1</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Microsoft® .NET Framework Software Development Kit (SDK) version 1.1 includes everything developers need to write, build, test, and deploy .NET Framework applications—documentation, samples, and command-line tools and compilers.</description>
+    <summary>.NET Framework SDK Version 1.1</summary>
+    <tags>.NET Framework SDK 1.1 admin</tags>
+    <licenseUrl>http://msdn.microsoft.com/en-US/cc300389.aspx</licenseUrl>
+    <packageSourceUrl>https://github.com/derwasp/choco/raw/master/DotNetSdk1.1</packageSourceUrl> 
+  </metadata>
+</package>
