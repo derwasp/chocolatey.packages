@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>log2console</id>
+    <title>log2console</title>
+    <version>1.6.0.2</version>
+    <authors>Statyk7 calhuskerfan DarrelMiller leetbmc LexLavnikov michalsteyn Rudy_Wahl vertigo00oo Yakoo</authors>
+    <owners>derwasp</owners>
+    <summary>Log2Console - A Generic Log Viewer for Log4Net, NLog etc</summary>
+    <iconUrl>https://github.com/derwasp/choco/raw/master/log2console/Log2Console.ico</iconUrl>
+    <projectUrl>https://log2console.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Log2Console is a development tool offering a nice UI to display, filter and search log messages from different logging services: Log4Net, Log4j and NLog. It can directly receive log events locally or remotely, or read them from a log file... It is written with C#.</description>
+    <tags>log2console Log4Net NLog admin</tags>
+    <packageSourceUrl>https://github.com/derwasp/choco/raw/master/log2console</packageSourceUrl> 
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
