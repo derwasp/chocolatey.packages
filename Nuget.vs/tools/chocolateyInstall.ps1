@@ -2,7 +2,7 @@ $package = 'NuGet.vs'
 
 $params = @{
   PackageName = $package;
-  VsixUrl = 'http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c/file/37502/30/NuGet.Tools.vsix';
+  VsixUrl = 'https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c/file/37502/39/NuGet.Tools.vsix';
 }
 
 $vsKeys = Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\VisualStudio' |
