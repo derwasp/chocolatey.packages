@@ -32,7 +32,7 @@
     <licenseUrl>http://visualstudiogallery.msdn.microsoft.com/site/27077b70-9dad-4c64-adcf-c7cf6bc9970c/eula?licenseType=None</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://github.com/derwasp/choco/raw/master/NuGet.vs/nuget.png</iconUrl>
-    <packageSourceUrl>https://github.com/derwasp/choco/raw/master/NuGet.vs</packageSourceUrl> 
+    <packageSourceUrl>https://github.com/derwasp/choco/tree/master/Nuget.vs</packageSourceUrl> 
     <dependencies>
     </dependencies>
   </metadata>
