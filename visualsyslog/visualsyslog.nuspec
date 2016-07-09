@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>visualsyslog</id>
+    <title>visualsyslog</title>
+    <version>1.6.4.19</version>
+    <authors>MaxBelkov</authors>
+    <owners>derwasp</owners>
+    <summary>Syslog Server for Windows with a graphical user interface</summary>
+    <description>
+![](https://raw.githubusercontent.com/MaxBelkov/visualsyslog/master/screens/ico.png) Visual Syslog Server for Windows
+===
+Visual Syslog Server for Windows is a free open source program to receive and view syslog messages.
+Useful when setting up routers and systems based on Unix/Linux.
+
+Visual Syslog Server for Windows has a live messages view: switches to a new received message. Helpful color highlighting.
+Useful message filtering. Customizable notification and actions.
+    </description>
+    <projectUrl>https://github.com/MaxBelkov/visualsyslog/</projectUrl>
+    <packageSourceUrl>https://github.com/derwasp/choco/raw/master/visualsyslog</packageSourceUrl>
+    <docsUrl>https://github.com/MaxBelkov/visualsyslog</docsUrl>
+    <bugTrackerUrl>https://github.com/MaxBelkov/visualsyslog/issues</bugTrackerUrl>
+    <tags>visualsyslog admin syslog log</tags>
+    <copyright>MaxBelkov</copyright>
+    <licenseUrl>https://github.com/MaxBelkov/visualsyslog/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://raw.githubusercontent.com/MaxBelkov/visualsyslog/master/screens/ico.png</iconUrl>
+    <releaseNotes>
+1.6.4  2015-11-23
+
+- Fixed bug with sending e-mail
+    </releaseNotes>
+    <!--<provides></provides>-->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
