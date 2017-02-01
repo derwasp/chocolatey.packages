@@ -77,7 +77,9 @@ Target "PublishArtifacts" (fun _ ->
     |> Seq.filter shouldPushNewPackage
     |> Seq.iter (fun pkg -> 
             trace (sprintf "Pushing package %s" pkg)
+            ProcessHelper.enableProcessTracing <- false
             pkg |> Choco.Push (fun p -> { p with ApiKey = environVar chocolateyKeyVar })
+            ProcessHelper.enableProcessTracing <- true
         )
 )
 
