@@ -36,9 +36,24 @@ Target "BuildChocoPackages" (fun _ ->
         )    
 )
 
+let getPackageVersionAndStatus (repoUrl:string) packageName version = 
+    let webClient = new System.Net.WebClient();
+    let url : string = repoUrl.TrimEnd('/') + "/Packages(Id='" + packageName + "',Version='" + version + "')"
+    let resp = webClient.DownloadString(url)
+    let doc = XMLDoc resp
+
+    let entry = doc.["entry"]
+    let properties = entry.["m:properties"]
+    let property name = 
+        let p = properties.["d:" + name]
+        if p = null || p.IsEmpty then "" else p.InnerText
+    let boolProperty name = (property name).ToLower() = "true"
+
+    (property "Version", boolProperty "IsApproved")
+
 let existingPackage packageId version =
     try
-        Some (getPackage chocolateyFeed packageId version)
+        Some (getPackageVersionAndStatus chocolateyFeed packageId version)
     with
         :? Net.WebException as exc -> if exc.Message.Contains("404") then None else failwith "Error"
         | _ -> failwith "Error"
@@ -68,8 +83,12 @@ let shouldPushNewPackage pkg =
                                     trace "Higher version already exists"
                                     false
                     | None -> true // push new package
-        | Some x -> trace "This version already exists"
-                    false
+        | Some (_, approved) ->
+                           trace "This version already exists"
+                           if not approved then
+                             trace "But it is not approved"
+                           
+                           not approved
 
 Target "PublishArtifacts" (fun _ ->
     !! "**/*.nupkg"
