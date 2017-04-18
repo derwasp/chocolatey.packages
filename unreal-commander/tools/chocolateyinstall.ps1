@@ -2,8 +2,8 @@
 
 $packageName= 'unreal-commander'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://x-diesel.net/download/evolution/uncomsetup3.57(build1206).exe'
-$checksum   = 'AC8C3B127CD27318D965428B6F846083'
+$url        = 'http://x-diesel.net/download/evolution/uncomsetup3.57(build1209).exe'
+$checksum   = 'A4B09558828AE146633E0AEF58F3D7D7'
 
 $packageArgs = @{
   packageName   = $packageName
