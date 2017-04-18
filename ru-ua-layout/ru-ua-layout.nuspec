@@ -9,7 +9,7 @@
     <authors>DrupalDance.com</authors>
     <tags>ru ua keyboard layout admin</tags>
     <summary>Combined RU-UA keyboard layout</summary>
-    <description>Combined RU-UA keyboard layout</description>
+    <description>Combined RU-UA keyboard layout. The main language is Russian. Ukrainian characters can be typed using AltGr + letters which are used for these special characters in UA layout.</description>
     <projectUrl>https://github.com/derwasp/chocolatey.packages/tree/master/ru-ua-layout</projectUrl>
     <packageSourceUrl>https://github.com/derwasp/choco/raw/master/ru-ua-layout</packageSourceUrl> 
   </metadata>
