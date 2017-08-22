@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>icc-profile-inspector</id>
+    <version>2.4</version>
+    <packageSourceUrl>https://github.com/derwasp/chocolatey.packages/tree/master/icc-profile-inspector</packageSourceUrl>
+    <title>ICC Profile Inspector</title>
+    <authors>International Color Consortium</authors>
+    <projectUrl>http://www.color.org/profileinspector.xalter</projectUrl>
+    <tags>icc profile inspector admin</tags>
+    <summary>ICC Profile Inspector</summary>
+    <description>ICC Profile Inspector enables PC users to explore the contents of an ICC profile. We are grateful to Huan Zeng of HP for making it available and would note that it is to be used at the user's own risk. The author accepts no liability for its behaviour.
+
+There are three ways to view an ICC profile with Profile Inspector.
+
+Run ICC Profile Inspector and select an ICC profile using the 'Browse' button.
+Drag and drop an ICC profile on to the ICC Profile Inspector icon.
+Right-click an ICC profile, click "Send To" and select ICC Profile Inspector from the list.
+Profile Inspector also incorporates the ability to modify many of the tag entries in a profile. Version 2.4 is compatible with the Windows 7 operating system, as well as Windows XP and Windows Vista.</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
