@@ -20,5 +20,16 @@ $packageArgs = @{
   validExitCodes= @(0)
 }
 
+# from https://chocolatey.org/packages/veracrypt
+$ahkExe = 'AutoHotKey'
+$ahkFile = Join-Path $toolsDir "icc-profile-inspector-install.ahk"
+$ahkProc = Start-Process -FilePath $ahkExe `
+                         -ArgumentList $ahkFile `
+                         -PassThru
+ 
+$ahkId = $ahkProc.Id
+Write-Debug "$ahkExe start time:`t$($ahkProc.StartTime.ToShortTimeString())"
+Write-Debug "Process ID:`t$ahkId"
+
 Install-ChocolateyZipPackage @packageArgs
 Install-ChocolateyInstallPackage @packageArgs
