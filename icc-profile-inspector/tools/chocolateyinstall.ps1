@@ -22,7 +22,7 @@ $packageArgs = @{
 
 # from https://chocolatey.org/packages/veracrypt
 $ahkExe = 'AutoHotKey'
-$ahkFile = Join-Path $toolsDir "icc-profile-inspector-install.ahk"
+$ahkFile = Join-Path $toolsDir "icc-profile-inspectorinstall.ahk"
 $ahkProc = Start-Process -FilePath $ahkExe `
                          -ArgumentList $ahkFile `
                          -PassThru
