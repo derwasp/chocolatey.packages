@@ -17,6 +17,9 @@ Run ICC Profile Inspector and select an ICC profile using the 'Browse' button.
 Drag and drop an ICC profile on to the ICC Profile Inspector icon.
 Right-click an ICC profile, click "Send To" and select ICC Profile Inspector from the list.
 Profile Inspector also incorporates the ability to modify many of the tag entries in a profile. Version 2.4 is compatible with the Windows 7 operating system, as well as Windows XP and Windows Vista.</description>
+    <dependencies>
+        <dependency id="autohotkey.portable" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
