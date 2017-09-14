@@ -2,6 +2,7 @@
 
 open System
 open System.IO
+open System.Text
 
 open Fake
 open Fake.FileUtils
