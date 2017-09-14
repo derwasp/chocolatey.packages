@@ -11,6 +11,27 @@ open Fake.NuGetHelper
 let chocolateyKeyVar = "CHOCO_KEY"
 let chocolateyFeed = "https://chocolatey.org/api/v2/"
 
+open System.Diagnostics
+let private callChoco args timeout =
+    // Try to find the choco executable if not specified by the user.
+    let chocoExe =
+        let found = Choco.FindExe
+        if found <> None then found.Value else failwith "Cannot find the choco executable."
+
+    let setInfo (info:ProcessStartInfo) =
+        info.FileName <- chocoExe
+        info.Arguments <- args
+    let result = ExecProcess (setInfo) timeout
+    if result <> 0 then failwithf "choco failed with exit code %i." result
+
+let private callChocoPack (setParams: (Choco.ChocoPackParams -> Choco.ChocoPackParams)) =
+    let parameters = setParams Choco.ChocoPackDefaults
+    let args = StringBuilder()
+            |> appendWithoutQuotes "pack"
+            |> appendWithoutQuotesIfNotNull parameters.AdditionalArgs parameters.AdditionalArgs
+            |> toText
+
+    callChoco args parameters.Timeout
 Target "BuildChocoPackages" (fun _ ->
     trace "Building nupkg from nuspec"
     !! "**/*.nuspec"
@@ -19,20 +40,14 @@ Target "BuildChocoPackages" (fun _ ->
             let nuspecName = Path.GetFileName nuspec
             trace (sprintf  "building %s in %s" nuspecName directory)
 
-            // workaround to make choco helper happy
-            let nuspecProp = nuspec
-                             |> File.ReadAllText
-                             |> getNuspecProperties
-            let version = nuspecProp.Version
-            let packageId = nuspecProp.Id
-            trace (sprintf "Package id: %s with version %s" version packageId)
-            nuspec
-            |> Choco.PackFromTemplate (fun p -> {
-                                                    p with
-                                                        OutputDir = directory
-                                                        Version = version
-                                                        PackageId = packageId
-                                                        })
+            pushd <| Path.GetDirectoryName nuspec
+
+            callChocoPack (fun p -> {
+                                p with
+                                    OutputDir = directory
+                                    InstallerType = Choco.ChocolateyInstallerType.SelfContained
+                                    })
+            popd()                        
         )
 )
 
@@ -75,8 +90,8 @@ let shouldPushNewPackage pkg =
         None -> trace "Such version does not exit"
                 let lastPackage = packageId |> latestVersion
                 match lastPackage with
-                    Some pkg -> let repoVersion = new Version(pkg.Version)
-                                let localVersion = new Version(version)
+                    Some pkg -> let repoVersion = Version(pkg.Version)
+                                let localVersion = Version(version)
                                 if localVersion > repoVersion then
                                     true // push new version
                                 else
