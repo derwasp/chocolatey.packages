@@ -6,8 +6,6 @@ open System.Text
 
 open Fake
 open Fake.FileUtils
-open Fake.Choco
-open Fake.NuGetHelper
 
 let chocolateyKeyVar = "CHOCO_KEY"
 let chocolateyFeed = "https://chocolatey.org/api/v2/"
@@ -33,6 +31,7 @@ let private callChocoPack (setParams: (Choco.ChocoPackParams -> Choco.ChocoPackP
             |> toText
 
     callChoco args parameters.Timeout
+
 Target "BuildChocoPackages" (fun _ ->
     trace "Building nupkg from nuspec"
     !! "**/*.nuspec"
@@ -43,11 +42,7 @@ Target "BuildChocoPackages" (fun _ ->
 
             pushd <| Path.GetDirectoryName nuspec
 
-            callChocoPack (fun p -> {
-                                p with
-                                    OutputDir = directory
-                                    InstallerType = Choco.ChocolateyInstallerType.SelfContained
-                                    })
+            callChocoPack (fun p -> { p with OutputDir = directory })
             popd()                        
         )
 )
