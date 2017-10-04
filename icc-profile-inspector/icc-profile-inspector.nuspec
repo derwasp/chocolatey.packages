@@ -6,6 +6,7 @@
     <packageSourceUrl>https://github.com/derwasp/chocolatey.packages/tree/master/icc-profile-inspector</packageSourceUrl>
     <title>ICC Profile Inspector</title>
     <authors>International Color Consortium</authors>
+    <owners>derwasp</owners>
     <projectUrl>http://www.color.org/profileinspector.xalter</projectUrl>
     <tags>icc profile inspector admin</tags>
     <summary>ICC Profile Inspector</summary>
