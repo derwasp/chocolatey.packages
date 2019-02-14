@@ -3,7 +3,7 @@
   <metadata>
     <id>log2console</id>
     <title>log2console</title>
-    <version>1.6.0.2</version>
+    <version>1.6.0.2.20190214</version>
     <authors>Statyk7 calhuskerfan DarrelMiller leetbmc LexLavnikov michalsteyn Rudy_Wahl vertigo00oo Yakoo</authors>
     <owners>derwasp</owners>
     <summary>Log2Console - A Generic Log Viewer for Log4Net, NLog etc</summary>

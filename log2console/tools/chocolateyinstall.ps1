@@ -2,7 +2,7 @@
 
 $packageName= 'log2console'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=log2console&DownloadId=1484720&FileTime=130867919671770000&Build=21031'
+$url        = 'https://raw.githubusercontent.com/Statyk7/log2console/2d81188a3799ae9de0f469dc9260075d8d17d2fb/output/Log2Console-1.6.0.2.msi'
 
 $packageArgs = @{
   packageName   = $packageName
