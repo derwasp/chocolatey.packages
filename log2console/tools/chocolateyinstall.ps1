@@ -10,8 +10,10 @@ $packageArgs = @{
   fileType      = 'msi'
   url           = $url
 
+  checksum      = '54202EFF5754FA4275EFDEC030470B47'
+
   validExitCodes= @(0, 3010, 1641)
-  silentArgs   = '/quiet /qn'
+  silentArgs    = '/quiet /qn'
 
   softwareName  = 'log2console*'
 }
