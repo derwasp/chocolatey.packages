@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>icc-profile-inspector</id>
-    <version>2.4</version>
+    <version>2.4.20210222</version>
     <packageSourceUrl>https://github.com/derwasp/chocolatey.packages/tree/master/icc-profile-inspector</packageSourceUrl>
     <title>ICC Profile Inspector</title>
     <authors>International Color Consortium</authors>
