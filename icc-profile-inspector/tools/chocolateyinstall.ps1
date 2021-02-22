@@ -2,7 +2,7 @@
 
 $packageName= 'icc-profile-inspector'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://www.color.org/ICCProfileInspector2_4.zip'
+$url        = 'http://www.color.org/ICCProfileInspector2-4.zip'
 
 $fileLocation = Join-Path $toolsDir 'ICCProfileInspector/ICCProfileInspector.exe'
 
